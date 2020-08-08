@@ -1,13 +1,13 @@
 import React from 'react';
 import logo from './logo.png';
-
-import ApolloClient from 'apollo/client';
-import {ApolloProvider} from 'apollo/client';
+import Launches from './components/Launches';
+import ApolloClient from 'apollo-boost';
+import {ApolloProvider} from 'react-apollo';
 
 import './App.css';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:5000/graphl'
+  uri: 'http://localhost:5000/graphql'
 });
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
    
     <div className="container">
    <img src={logo} alt='spacex' style={{width:200, display: 'block', margin: 'auto'}} />
+   <Launches/>
     </div>
     </ApolloProvider>
   );
